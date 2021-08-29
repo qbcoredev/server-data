@@ -37,8 +37,8 @@ Config.Locations = {
         [8] = {coords = vector4(363.82, -589.09, 43.28, 68.5), taken = false, model = 1631638868},
     }, 
     ["stations"] = {
-        [1] = {label = "Doctor's Post Paleto", coords = vector4(-254.88, 6324.5, 32.58, 3.5)},
-        [2] = {label = "Pillbox Hospital", coords = vector4(304.27, -600.33, 43.28, 272.249)}
+        [1] = {label = "Phòng Khám Paleto", coords = vector4(-254.88, 6324.5, 32.58, 3.5)},
+        [2] = {label = "Bệnh Viện Thành Phố", coords = vector4(304.27, -600.33, 43.28, 272.249)}
     }
 }
 
@@ -53,7 +53,7 @@ Config.Whitelist = {
 Config.Helicopter = "polmav"
 
 Config.Items = {
-    label = "Hospital safe",
+    label = "Kho Đồ Bệnh Viện",
     slots = 30,
     items = {
         [1] = {
@@ -281,17 +281,17 @@ Config.StaggerAreas = {
 }
 
 Config.WoundStates = {
-    'irritated',
-    'quite painful',
-    'painful',
-    'really painful',
+    'bị kích thích',
+    'khá đau',
+    'đau đớn',
+    'thực sự đau đớn',
 }
 
 Config.BleedingStates = {
-    [1] = {label = 'bleeding a little bit..', damage = 10, chance = 50},
-    [2] = {label = 'bleeding..', damage = 15, chance = 65},
-    [3] = {label = 'bleeding a lot..', damage = 20, chance = 65},
-    [4] = {label = 'bleeding very much..', damage = 25, chance = 75},
+    [1] = {label = 'chảy máu một chút..', damage = 10, chance = 50},
+    [2] = {label = 'chảy máu..', damage = 15, chance = 65},
+    [3] = {label = 'chảy nhiều máu..', damage = 20, chance = 65},
+    [4] = {label = 'chảy máu rất nhiều..', damage = 25, chance = 75},
 }
 
 Config.MovementRate = {
