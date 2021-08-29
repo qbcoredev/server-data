@@ -195,17 +195,17 @@ Citizen.CreateThread(function()
                             if bedId ~= nil then 
                                 TriggerServerEvent("hospital:server:SendToBed", bedId, true)
                             else
-                                QBCore.Functions.Notify("Beds are occupied..", "error")
+                                QBCore.Functions.Notify("Giường có người..", "error")
                             end
                         end, function() -- Cancel
                             TriggerEvent('animations:client:EmoteCommandStart', {"c"})
-                            QBCore.Functions.Notify("Checking in failed!", "error")
+                            QBCore.Functions.Notify("Checking in Thất Bại!", "error")
                         end)
                     end
                 end
             elseif #(pos - vector3(Config.Locations["checking"].x, Config.Locations["checking"].y, Config.Locations["checking"].z)) < 4.5 then
                 if doctorCount >= Config.MinimalDoctors then
-                    QBCore.Functions.DrawText3D(Config.Locations["checking"].x, Config.Locations["checking"].y, Config.Locations["checking"].z, "Call")
+                    QBCore.Functions.DrawText3D(Config.Locations["checking"].x, Config.Locations["checking"].y, Config.Locations["checking"].z, "Gọi")
                 else
                     QBCore.Functions.DrawText3D(Config.Locations["checking"].x, Config.Locations["checking"].y, Config.Locations["checking"].z, "Check in")
                 end
@@ -218,7 +218,7 @@ Citizen.CreateThread(function()
                         if GetAvailableBed(closestBed) ~= nil then 
                             TriggerServerEvent("hospital:server:SendToBed", closestBed, false)
                         else
-                            QBCore.Functions.Notify("Beds are occupied..", "error")
+                            QBCore.Functions.Notify("Giường đã có người..", "error")
                         end
                     end
                 end
@@ -251,7 +251,7 @@ Citizen.CreateThread(function()
         if QBCore ~= nil then
             if isInHospitalBed and canLeaveBed then
                 local pos = GetEntityCoords(PlayerPedId())
-                QBCore.Functions.DrawText3D(pos.x, pos.y, pos.z, "~g~E~w~ - To get out of bed..")
+                QBCore.Functions.DrawText3D(pos.x, pos.y, pos.z, "~g~E~w~ - Ra Khỏi Giường..")
                 if IsControlJustReleased(0, 38) then
                     LeaveBed()
                 end
@@ -299,7 +299,7 @@ AddEventHandler('hospital:client:Revive', function()
     TriggerServerEvent("hospital:server:SetDeathStatus", false)
     TriggerServerEvent("hospital:server:SetLaststandStatus", false)
     
-    QBCore.Functions.Notify("You are completely healthy again!")
+    QBCore.Functions.Notify("Hồi Phục Xong!")
 end)
 
 RegisterNetEvent('hospital:client:SetPain')
@@ -344,7 +344,7 @@ AddEventHandler('hospital:client:HealInjuries', function(type)
         ResetPartial()
     end
     TriggerServerEvent("hospital:server:RestoreWeaponDamage")
-    QBCore.Functions.Notify("Your wounds have been healed!")
+    QBCore.Functions.Notify("Vết thương của bạn đã được chữa lành!")
 end)
 
 RegisterNetEvent('hospital:client:SendToBed')
@@ -355,7 +355,7 @@ AddEventHandler('hospital:client:SendToBed', function(id, data, isRevive)
     Citizen.CreateThread(function ()
         Citizen.Wait(5)
         if isRevive then
-            QBCore.Functions.Notify("You are being helped..")
+            QBCore.Functions.Notify("Bạn đang được giúp đỡ..")
             Citizen.Wait(Config.AIHealTimer * 1000)
             TriggerEvent("hospital:client:Revive")
         else
@@ -491,7 +491,7 @@ function DoLimbAlert()
                     end
                 end
             else
-                limbDamageMsg = "You have pain on many places.."
+                limbDamageMsg = "Bạn bị đau ở nhiều nơi.."
             end
             QBCore.Functions.Notify(limbDamageMsg, "primary", 5000)
         end
@@ -700,7 +700,7 @@ function OutfitsLijst()
         ClearMenu()
 
         if outfits == nil then
-            QBCore.Functions.Notify("You didnt save any outfits...", "error", 3500)
+            QBCore.Functions.Notify("Bạn đã không lưu bất kỳ trang phục nào...", "error", 3500)
             closeMenuFull()
         else
             for k, v in pairs(outfits) do
@@ -729,7 +729,7 @@ end
 
 function removeOutfit(oData)
     TriggerServerEvent('clothes:removeOutfit', oData.outfitname)
-    QBCore.Functions.Notify(oData.outfitname.." has been deleted", "success", 2500)
+    QBCore.Functions.Notify(oData.outfitname.." đã xóa", "success", 2500)
     closeMenuFull()
 end
 
