@@ -22,20 +22,19 @@ Config.CostMultiplier = 1.0
 
 -- Configure the strings as you wish here.
 Config.Strings = {
-	ExitVehicle = "Exit the vehicle to refuel",
-	EToRefuel = "Press ~g~E ~w~to refuel vehicle",
-	JerryCanEmpty = "Jerry can is empty",
-	FullTank = "Tank is full",
-	PurchaseJerryCan = "Press ~g~E ~w~to purchase a jerry can for ~g~$" .. Config.JerryCanCost,
-	CancelFuelingPump = "Press ~g~E ~w~to cancel the fueling",
-	CancelFuelingJerryCan = "Press ~g~E ~w~to cancel the fueling",
-	NotEnoughCash = "Not enough cash",
-	RefillJerryCan = "Press ~g~E ~w~ to refill the jerry can for ",
-	NotEnoughCashJerryCan = "Not enough cash to refill jerry can",
-	JerryCanFull = "Jerry can is full",
-	TotalCost = "Cost",
-	PurchaseJerryCan = "Press ~g~E ~w~to grab a jerry can",
-	RefillJerryCan = "Press ~g~E ~w~ to refill the jerry can",
+	ExitVehicle = "Bạn Cần Ra Khỏi Xe Để Thực Hiện",
+	EToRefuel = "Bấm ~g~E ~w~Để Đổ Xăng Cho Chiếc Xe",
+	JerryCanEmpty = "Can Xăng Trống",
+	FullTank = "Xe Đã Đầy Xăng",
+	PurchaseJerryCan = "Bấm ~g~E ~w~Để Mua Can Xăng Với Giá ~g~$" .. Config.JerryCanCost,
+	CancelFuelingPump = "Bấm ~g~E ~w~Để Dừng Đổ Xăng",
+	CancelFuelingJerryCan = "Bấm ~g~E ~w~Để Dừng Mua Xăng",
+	NotEnoughCash = "Bạn Không Đủ Tiền",
+	RefillJerryCan = "Bấm ~g~E ~w~ Để Đổ Xăng Vào Can ",
+	NotEnoughCashJerryCan = "Bạn Không Đủ Tiền",
+	JerryCanFull = "Can Xăng Đầy",
+	TotalCost = "Tổng",
+	PurchaseJerryCan = "Bấm ~g~E ~w~Để Mua Can Xăng",
 }
 
 Config.PumpModels = {
