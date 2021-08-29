@@ -13,7 +13,7 @@ AddEventHandler('apartments:server:CreateApartment', function(type, label)
         ['@label'] = label,
         ['@citizenid'] = Player.PlayerData.citizenid
     })
-    TriggerClientEvent('QBCore:Notify', src, "You got a apartment ("..label..")")
+    TriggerClientEvent('QBCore:Notify', src, "Bạn có một căn hộ ("..label..")")
     TriggerClientEvent("apartments:client:SpawnInApartment", src, apartmentId, type)
     TriggerClientEvent("apartments:client:SetHomeBlip", src, type)
 end)
@@ -23,7 +23,7 @@ AddEventHandler('apartments:server:UpdateApartment', function(type)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     exports.ghmattimysql:execute('UPDATE apartments SET type=@type WHERE citizenid=@citizenid', {['@type'] = type, ['@citizenid'] = Player.PlayerData.citizenid})
-    TriggerClientEvent('QBCore:Notify', src, "You have changed apartments")
+    TriggerClientEvent('QBCore:Notify', src, "Bạn đã thay đổi căn hộ")
     TriggerClientEvent("apartments:client:SetHomeBlip", src, type)
 end)
 
