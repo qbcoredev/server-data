@@ -174,6 +174,7 @@ CreateThread(function()
                             MenuV:OpenMenu(menu)
                         end
                     else
+			MenuV:CloseMenu(menu)
                         inRange = false
                     end
                 end
