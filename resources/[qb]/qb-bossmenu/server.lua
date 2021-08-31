@@ -36,11 +36,11 @@ AddEventHandler("qb-bossmenu:server:withdrawMoney", function(amount)
         Accounts[job] = 0
     end
 
-    if Accounts[job] >= amount then
+    if Accounts[job] >= amount and amount > 0 then
         Accounts[job] = Accounts[job] - amount
         Player.Functions.AddMoney("cash", amount)
     else
-        TriggerClientEvent('QBCore:Notify', src, 'Not Enough Money', 'error')
+        TriggerClientEvent('QBCore:Notify', src, 'Not Enough Money or amount < 0', 'error')
         return
     end
     SaveResourceFile(GetCurrentResourceName(), "./accounts.json", json.encode(Accounts), -1)
